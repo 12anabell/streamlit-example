@@ -7,7 +7,8 @@ import certifi
 st.title("Probando conexion a Mongo DB")
 
 def conection():
-    return MongoClient("mongodb+srv://anabell2:vtFGJ8w37tzeIDs3@prediccion2024.hq8qgjl.mongodb.net/",tlsCAFile=certifi.where())
+    return MongoClient("mongodb+srv://" + st.secrets["DB_USERNAME"] + ":" + st.secrets["DB_PASSWORD"] +
+                   "@prediccion2024.hq8qgjl.mongodb.net/",tlsCAFile=certifi.where())
 
 conexion = conection()
 
